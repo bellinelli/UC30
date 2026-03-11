@@ -1,75 +1,34 @@
-# Dicionário é uma estrutura de dados que armazena coleções não ordenadas de pares chave-valor
+contato = {
+    "@camila": "camila",
+    "@paola": "paola",
+    "@sheron": "sheron",
+    "@bruna": "bruna"
+}
 
-#sem dicionário
-matricula1 = 2026001
-nome1 = "Ana Silva"
-telefone1 = "9999-9999"
+print("chaves: ")
+for insta in contato.keys():
+    print(insta)
 
-#com dicionario
-aluno = [
-matricula1 = 2026001
-nome = "Ana Silva"
-telefone = "9999-9999"
-]
+print("\n valores: ")
+for nome in contato.values():
+    print(nome)
 
-print(aluno)
+print("\n pares: ")
+for insta, nome in contato.items():
+    print(f"{insta} --> {nome}") 
 
 contato = {
-  "@camilaqueiroz": "Camila Queiroz",
-  "@brunamarquezine": "Bruna M.",
-  "@sheron Menezes": "Sheron M.",
-  "@paolaoliveira": "Paola O.",
-}
-print(contato)
-print(type(contato))
+    "@camila": 1.70,
+    "@paola": 1.80,
+    "@sheron": 1.55,
+    "@bruna": 1.60
+}       
 
-# Acesso Direto
-print(contato{"@camilaqueiroz"})
+print("ordenando por chave: ")
+for insta in sorted(contato.keys()):
+    print(f"{insta} --> {contato[insta]:.2f}m")
 
-# Acesso seguro com get()
-print(contato.get("@paolaoliveira"))
-print(contato.get("@inexistente"))
-print(contato.get("@inexistente", "Não encontrado"))
-
-# Add novo 
-contato{"@giovanna"} = "Giovanna"
-print("Após add: ", contato)
-
-#Atualiza elemento existente
-contato["@Paolaoliveira"] = "Paola Oliveira"
-print("Após add: ", contato)
-
-contato.update({
-        "@brunamarquezine": "Bruna Marquezine",
-        "@camilaqueiroz": "Camila Q."
-})
-
-print("Após Atualização: ", contato)
-
-# Pop: Remove e retorna
-removido = contato.pop("@paolaoliveira")
-print(f"Removido: "(removido))
-print("Após o pop: ", contato)
-
-# del remove sem retornar
-del contato["@camilaqueiroz"]
-print("Após o del: ", contato)
-
-#clear esvazia tudo
-copia = dict(contato)
-contato.clear()
-print("Após clear: ", contato)
-print("Cópia: ", copia)
-
-print("Número de contato: ", len(contato)) #tamanho
-
-
-# Verificar a existência
-
-if "@joao" in contato:
-    print(f"Econtrado: {contato['@joao']}")
-
-if "@inexistente" in contato:
-    print("Existe")
-else:
-    print("Não existe.")
+from operator import itemgetter
+print("\n ordenado por valor (altura): ")
+for insta, estatura in sorted(contato.items(), key = itemgetter(1)):
+    print(f"{insta} --> {estatura:.2f}m")    
