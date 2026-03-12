@@ -1,33 +1,28 @@
-notas = [7.5, 8.0, 9.5, 6.0, 8.5]
+print("Python é fácil")
+print("Python é fácil")
+print("Python é fácil")
 
-print("Notas: ",notas)
+def exibirmensagem():
+    print("Olá, mundo!")
 
-print("Menor: ", min(notas))
+exibirmensagem()
 
-print("Maior: ", max(notas))
-print("Soma: ", sum(notas))
-print("Média: ", sum(notas) / len (notas))
+def saudar(nome):
+    print(f"Olá, {nome}!")
 
-nomes = ["Adriana" , "Breno", "Carla", "Daniel"]
+saudar("Ana")
+saudar("Bruno")
 
-# Apenas o elemento
-print("Usando FOR simples: ")
-for nome in nomes:
-    print(f"Olá {nome}!")
+def exibirmensagem(nome, mensagem):
+    print(f"{mensagem}, {nome}")
 
-# Indice e elemento
-print("\n Usando enumerante: ")
-for indice, nome in enumerate(nomes):
-    print(f"Posição {indice}: {nome}")
+exibirmensagem("Ana", "Bom dia!")
 
-original = ["A", "B", "C"]
-copia = list(original)
+exibirmensagem(nome ="Bruno", mensagem = "Boa noite!")
 
-print("Orginal: ", original)
-print("Cópia: ", copia)
-print("São iguais: ", original == copia)
+def calcularmedia(nota1, nota2):
+    media = (nota1 + nota2) / 2
+    return media
 
-copia.append("D")
-print("Original", original)
-print("Cópia: ", copia)
-print("São iguais: ", original == copia)
+resultado = calcularmedia(8.0, 9.0)
+print(f"Média: {resultado}")
